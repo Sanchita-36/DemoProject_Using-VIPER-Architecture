@@ -7,15 +7,26 @@
 //
 
 protocol CovidHomeInteractorProtocol {
-    func getCity() -> [CovidHomeModel]
+    func getRegionData(completion: @escaping (RegionClosure)) -> (Void)
+    //func getCity() -> [CovidHomeModel]  - Use this in case you consider CovidCityService.swift
 }
 
 class CovidHomeInteractor {
-    
+    var service: CovidDataAPI
+    init(service: CovidDataAPI) {
+        self.service = service
+    }
 }
 
 extension CovidHomeInteractor: CovidHomeInteractorProtocol {
-    func getCity() -> [CovidHomeModel] {
-        return DataService.instance.covidCity
+    /* Use this in case you consider CovidCityService.swift
+     func getCity() -> [CovidHomeModel] {
+     return DataService.instance.covidCity
+     }*/
+    
+    func getRegionData(completion: @escaping (RegionResult) -> (Void)) {
+        self.service.fetchRegions { (result) in
+            completion(result)
+        }
     }
 }

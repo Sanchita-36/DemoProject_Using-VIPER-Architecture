@@ -9,12 +9,15 @@
 import UIKit
 
 class CovidCityTableViewCell: UITableViewCell {
-
-  
+    
     @IBOutlet weak var cityLabel: UILabel!
     
-    func updateViews(city: CovidHomeModel) {
-        cityLabel.text = city.cityTitle
-        
+    func updateRegions(region: RegionDataViewModel) {
+        cityLabel.text = region.regionData
     }
+    
+    /* Use this in case you consider CovidCityService.swift
+     func updateViews(city: CovidHomeModel) {
+     cityLabel.text = city.cityTitle
+     }*/
 }

@@ -13,7 +13,7 @@ class CovidHomeDependencyBuilder {
     static func builder() -> UIViewController {
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         let view = storyboard.instantiateViewController(identifier: "CovidHomeViewController") as! CovidHomeViewController
-        let interactor = CovidHomeInteractor()
+        let interactor = CovidHomeInteractor(service: CovidDataAPI.shared)
         let router = CovidHomeRouter(view: view)
         let presenter = CovidHomePresenter(view: view, interactor: interactor, router: router)
         view.presenter = presenter

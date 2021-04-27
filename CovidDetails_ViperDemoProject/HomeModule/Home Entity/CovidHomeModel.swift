@@ -7,9 +7,9 @@
 //
 
 struct CovidHomeModel {
-    private(set) public var cityTitle: String
-    
-    init(cityTitle: String) {
-           self.cityTitle = cityTitle
-       }
+     private(set) public var cityTitle: String
+     
+     init(cityTitle: String) {
+     self.cityTitle = cityTitle
+     }
 }

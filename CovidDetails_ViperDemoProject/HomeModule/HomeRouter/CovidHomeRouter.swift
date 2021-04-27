@@ -7,8 +7,7 @@
 //
 import UIKit
 
-protocol CovidHomeRouterProtocol {
-
+protocol CovidHomeRouterProtocol: class {
 }
 
 class CovidHomeRouter {
