@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        let initialViewController = CovidHomeDependencyBuilder.builder()
+        let initialViewController = CovidRegionDependencyBuilder.builder(usingNavigationFactory: NavigationBuilder.build)
         window?.rootViewController = initialViewController
         window?.makeKeyAndVisible()
     }

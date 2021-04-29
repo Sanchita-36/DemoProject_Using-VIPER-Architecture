@@ -6,19 +6,19 @@
 //  Copyright © 2021 Sanchita. All rights reserved.
 //
 
-protocol CovidHomeInteractorProtocol {
+protocol CovidRegionInteractorProtocol {
     func getRegionData(completion: @escaping (RegionClosure)) -> (Void)
     //func getCity() -> [CovidHomeModel]  - Use this in case you consider CovidCityService.swift
 }
 
-class CovidHomeInteractor {
+class CovidRegionInteractor {
     var service: CovidDataAPI
     init(service: CovidDataAPI) {
         self.service = service
     }
 }
 
-extension CovidHomeInteractor: CovidHomeInteractorProtocol {
+extension CovidRegionInteractor: CovidRegionInteractorProtocol {
     /* Use this in case you consider CovidCityService.swift
      func getCity() -> [CovidHomeModel] {
      return DataService.instance.covidCity

@@ -7,26 +7,27 @@
 //
 import UIKit
 
-protocol CovidHomePresenterProtocol {
+protocol CovidRegionPresenterProtocol {
     func viewDidLoad() -> Void
+    func presenterToRouterRegionSelection(presenterToRouterRegionSelectionData: String)
 }
 
-class CovidHomePresenter {
-    weak var view: CovidHomeViewProtocol?
-    var interactor: CovidHomeInteractorProtocol
-    var router: CovidHomeRouterProtocol
+class CovidRegionPresenter {
+    weak var view: CovidRegionViewProtocol?
+    var interactor: CovidRegionInteractorProtocol
+    var router: CovidRegionRouterProtocol
     
-    var regionArray = [RegionResult]()
-    
-    init(view: CovidHomeViewProtocol,interactor: CovidHomeInteractorProtocol, router: CovidHomeRouterProtocol) {
+    var region: String = ""
+
+    init(view: CovidRegionViewProtocol,interactor: CovidRegionInteractorProtocol, router: CovidRegionRouterProtocol) {
         self.view = view
         self.interactor = interactor
         self.router = router
     }
 }
 
-extension CovidHomePresenter: CovidHomePresenterProtocol {
-    
+extension CovidRegionPresenter: CovidRegionPresenterProtocol {
+
     func viewDidLoad() {
         /* Use this in case you consider CovidCityService.swift
          let covidCityPresenter = self.interactor.getCity()
@@ -45,6 +46,11 @@ extension CovidHomePresenter: CovidHomePresenterProtocol {
         }
     }
     
+    func presenterToRouterRegionSelection(presenterToRouterRegionSelectionData: String) {
+        let presenterToRouterSelectionData = presenterToRouterRegionSelectionData
+        self.router.presenterToRouterRegionSelection(presenterToRouterRegionSelectionData: presenterToRouterSelectionData)
+      }
+      
 }
 
 // Do not Use in case you consider CovidCityService.swift
@@ -55,5 +61,6 @@ struct RegionDataViewModel {
         self.regionData = regionDataList.region
     }
 }
+
 
 

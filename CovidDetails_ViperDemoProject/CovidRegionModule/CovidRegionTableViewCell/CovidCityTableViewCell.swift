@@ -8,12 +8,12 @@
 
 import UIKit
 
-class CovidCityTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var cityLabel: UILabel!
+class CovidStateTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var stateLabel: UILabel!
     
     func updateRegions(region: RegionDataViewModel) {
-        cityLabel.text = region.regionData
+        stateLabel.text = region.regionData
     }
     
     /* Use this in case you consider CovidCityService.swift
