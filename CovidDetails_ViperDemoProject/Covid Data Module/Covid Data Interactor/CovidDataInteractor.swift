@@ -7,19 +7,19 @@
 //
 
 protocol CovidDataInteractorProtocol {
-    func getCovidData(completion: @escaping (CovidDataClosure)) -> (Void)
+    func getCovidData(completion: @escaping (RegionClosure)) -> (Void)
 }
 
 class CovidDataInteractor {
-    var dataService: CovidDataService
-    init(dataService: CovidDataService) {
-        self.dataService = dataService
+    var service: CovidDataAPI
+    init(service: CovidDataAPI) {
+        self.service = service
     }
 }
 
 extension CovidDataInteractor: CovidDataInteractorProtocol {
-    func getCovidData(completion: @escaping (CovidDataResult) -> (Void)) {
-        self.dataService.fetchData { (result) in
+    func getCovidData(completion: @escaping (RegionResult) -> (Void)) {
+        self.service.fetchRegions{ (result) in
             completion(result)
         }
     }

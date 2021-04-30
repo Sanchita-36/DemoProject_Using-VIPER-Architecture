@@ -17,7 +17,7 @@ class CovidDataBuilder {
        // let viewR = CovidRegionDataViewController()
         viewD.title = regionBuilderData
         let viewString = regionBuilderData
-        let interactorD = CovidDataInteractor(dataService: CovidDataService.sharedData)
+        let interactorD = CovidDataInteractor(service: CovidDataAPI.shared)
         let routerD = CovidDataRouter(viewCD: viewD, viewString: viewString)
         let presenterD = CovidDataPresenter(viewData: viewD, interactorData: interactorD, routerData: routerD)
         viewD.presenterData = presenterD

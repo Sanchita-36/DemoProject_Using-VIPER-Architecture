@@ -53,7 +53,7 @@ struct RegionDataVM {
     let deceased: Int
     let newDeceased: Int
     
-    init(using regionDataList: CovidData) {
+    init(using regionDataList: Region) {
         self.region = regionDataList.region
         self.totalInfected = regionDataList.totalInfected
         self.newInfected = regionDataList.newInfected

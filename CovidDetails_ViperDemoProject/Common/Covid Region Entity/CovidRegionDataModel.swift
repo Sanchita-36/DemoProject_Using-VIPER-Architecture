@@ -1,16 +1,16 @@
 //
-//  CovidDataModel.swift
+//  CovidRegionModel.swift
 //  CovidDetails_ViperDemoProject
 //
-//  Created by Mac on 28/04/21.
+//  Created by Mac on 27/04/21.
 //  Copyright © 2021 Sanchita. All rights reserved.
 //
 
-struct CovidDataResult: Codable {
-    var regionData: [CovidData]
+struct RegionResult: Codable {
+    var regionData: [Region]
 }
 
-struct CovidData: Codable {
+struct Region: Codable {
     var region: String
     var totalInfected: Int
     var newInfected: Int

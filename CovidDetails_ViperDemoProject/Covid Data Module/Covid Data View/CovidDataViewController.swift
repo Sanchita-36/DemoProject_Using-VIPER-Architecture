@@ -36,10 +36,10 @@ class CovidDataViewController: UIViewController {
 extension CovidDataViewController: CovidDataViewProtocol {
     func updateRegionData(regionDataList: [RegionDataVM]) {
         arrayOfRegionData = regionDataList
-        print("Region Data List: \(regionDataList)")
+        //print("Region Data List: \(regionDataList)")
         for item in 0..<arrayOfRegionData.count{
             let itemRegion =  arrayOfRegionData[item].region
-            let saveResultRegion = self.saveViewString
+            var saveResultRegion = self.saveViewString
             
             if itemRegion == saveViewString {
                 totalInfectedLabel.text = String(arrayOfRegionData[item].totalInfected)
@@ -54,9 +54,6 @@ extension CovidDataViewController: CovidDataViewProtocol {
     
     func fetchViewString(viewString: String) {
         self.saveViewString = viewString
-        print(saveViewString)
      }
-     
-    
 }
 

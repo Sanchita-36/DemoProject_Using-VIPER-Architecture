@@ -35,7 +35,7 @@ class CovidRegionDataViewController: UIViewController {
 
 extension CovidRegionDataViewController: CovidRegionViewProtocol {
     func RegionSelection(regionSelection: String) -> String {
-        let regionSelectedOnTableViewCell = regionSelection
+        var regionSelectedOnTableViewCell = regionSelection
         return regionSelection
     }
     
